@@ -17,5 +17,22 @@ export default defineConfig({
   },
   server: {
     port: 3000
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          vendor: [
+            'axios',
+            'aos',
+            'swiper',
+            'framer-motion',
+            'react-icons',
+            '@tanstack/react-query'
+          ]
+        }
+      }
+    }
   }
 })
